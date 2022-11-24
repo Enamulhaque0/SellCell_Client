@@ -1,4 +1,5 @@
 import React from 'react';
+import Modal from './Modal';
 
 const CategoryDetails = () => {
     return (
@@ -51,7 +52,13 @@ const CategoryDetails = () => {
         <h4 className='text-center pt-5 font-bold'>Posted at 7:25 PM</h4>
        
     </div>
-    <div className='flex justify-center items-center'> <button className="btn btn-wide w-full">Wide</button></div>
+    <div className='flex justify-center items-center'> 
+    <label htmlFor="booking-modal" className="btn btn-wide w-full">Book now</label>
+    
+    
+    
+    </div>
+    <Modal></Modal>
 </div>
     );
 };
