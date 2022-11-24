@@ -102,7 +102,7 @@ const Login = () => {
         <div className="mt-4">
           <div className="flex items-center justify-between">
             <label
-              for="password"
+             
               className="block text-sm text-gray-800 dark:text-gray-200"
             >
               Password
