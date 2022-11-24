@@ -42,44 +42,45 @@ const Item = ({ title, children }) => {
 const Blogs = () => {
   return (
     <div className="my-24 px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-       
       <div className="max-w-xl sm:mx-auto lg:max-w-2xl">
         <div className="space-y-4">
           <Item title="What are the different ways to manage a state in a React application?">
-            SQL databases are relational, NoSQL databases are non-relational.
-            SQL databases use structured query language and have a predefined
-            schema. <br /> NoSQL databases have dynamic schemas for unstructured
-            data. <br />
-            SQL databases are vertically scalable, while NoSQL databases are
-            horizontally scalable. <br />
-            SQL databases are table-based, while NoSQL databases are document,
-            key-value, graph, or wide-column stores. <br />
-            SQL databases are better for multi-row transactions, while NoSQL is
-            better for unstructured data like documents or JSON.
+            The Four Kinds of React State to Manage LOCAL STATE, GLOBAL STATE,
+            SERVER STATE URL STATE
           </Item>
           <Item title="How does prototypical inheritance work?">
-            A JSON web token(JWT) is JSON Object which is used to securely
-            transfer information over the web(between two parties). It can be
-            used for an authentication system and can also be used for
-            information exchange. The token is mainly composed of header,
-            payload, signature. These three parts are separated by dots(.)..
-            Authentication server verifies the credentials and issues a jwt
-            signed using either a secret salt or a private key. User's Client
-            uses the JWT to access protected resources by passing the JWT in
-            HTTP Authorization header. Resource server then verifies the
-            authenticity of the token using the secret salt/ public key.
+            The Prototypal Inheritance is a feature in javascript used to add
+            methods and properties in objects. It is a method by which an object
+            can inherit the properties and methods of another object.
+            Traditionally, in order to get and set the Prototype of an object,
+            we use Object. getPrototypeOf and Object.em?
           </Item>
           <Item title="What is a unit test? Why should we write unit tests?">
-            JavaScript is a simple programming language that can be used with
-            any browser that has the JavaScript Engine installed. Node. js, on
-            the other hand, is an interpreter or execution environment for the
-            JavaScript programming language.
+            What is meant by unit testing?A unit test is a way of testing a unit
+            - the smallest piece of code that can be logically isolated in a
+            system. In most programming languages, that is a function, a
+            subroutine, a method or property. The isolated part of the
+            definition is important. They enable you to catch bugs early in the
+            development process. Automated unit tests help a great deal with
+            regression testing. They detect code smells in your codebase. For
+            example, if you're having a hard time writing u unit tests for a
+            piece of code, it might be a sign that your function is too complex.
           </Item>
           <Item title="React vs. Angular vs. Vue?">
-            NodeJS receives multiple client requests and places them into
-            EventQueue. NodeJS is built with the concept of event-driven
-            architecture. NodeJS has its own EventLoop which is an infinite loop
-            that receives requests and processes them.
+            Angular​ In Angular, components are called directives those are used
+            as markers on Document Object Model (DOM) elements, which can track
+            and detect specific behavior of every single component.For that
+            reason, Angular usually divides the UI part of components as
+            attributes of HTML tags, and their behaviors in the form of
+            JavaScript code. React In React, it usually combines the UI and
+            behavior of components. For instance, a code that can create a
+            "hello world" component in React and the same part of the code is
+            responsible for developing a UI element as well as tracking its
+            behavior. Vue​Vue gives the opportunity to customize it which allows
+            combining the UI and behavior of components in the same script.
+            Further, it allows using preprocessors in Vue rather than CSS that
+            is a relief for developers nowadays. Vue can integrate other
+            libraries like Bootstrap.
           </Item>
         </div>
       </div>

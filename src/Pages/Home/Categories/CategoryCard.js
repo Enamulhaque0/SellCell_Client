@@ -2,9 +2,12 @@ import React from 'react';
 import apple from '../../../assets/image/apple.png'
 import sumsu from '../../../assets/image/samsung.png'
 import onePluse from '../../../assets/image/oneplus.png'
+import { Link } from 'react-router-dom';
 const CategoryCard = () => {
     return (
         <>
+        
+        <Link to="../category-details">
         
         <div className="card w-96  shadow-xl image-full">
   <figure><img  src={apple} alt="Shoes" /></figure>
@@ -13,6 +16,8 @@ const CategoryCard = () => {
     
   </div>
 </div>
+        
+        </Link>
 <div className="card w-96 bg-base-100 shadow-xl image-full">
   <figure><img src={sumsu} alt="Shoes" /></figure>
   <div className="card-body">

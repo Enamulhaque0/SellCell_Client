@@ -7,6 +7,7 @@ import AllByers from "../../Pages/Dashboard/AllByers/AllByers";
 import AllSeller from "../../Pages/Dashboard/AllSeller/AllSeller";
 import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MyProducts from "../../Pages/Dashboard/MyProducts/MyProducts";
+import CategoryDetails from "../../Pages/Home/Categories/CategoryDetails";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/Login/Login/Login";
 import SingUp from "../../Pages/Login/SingUp/SingUp";
@@ -34,7 +35,11 @@ const router = createBrowserRouter([
             {
                 path: '/singup',
                 element: <SingUp></SingUp>
-            }
+            },
+            {
+                path: '/category-details',
+                element: <CategoryDetails></CategoryDetails>
+            },
         ]
 
     },
