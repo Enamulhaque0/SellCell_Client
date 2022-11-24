@@ -7,7 +7,7 @@ const auth = getAuth(app)
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);
-    console.log(user?.uid)
+    console.log(user?.displayName)
     const [loading, setLoading] = useState(true);
 
 
@@ -41,7 +41,7 @@ const AuthProvider = ({children}) => {
     // Auth  observer
     useEffect( () =>{
         const unsubscribe = onAuthStateChanged(auth, currentUser =>{
-            console.log('user observing');
+           
             setUser(currentUser);
             setLoading(false);
         });

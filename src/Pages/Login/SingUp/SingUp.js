@@ -6,7 +6,7 @@ import toast from 'react-hot-toast';
 
 const SingUp = () => {
     const googleProvider = new GoogleAuthProvider();
-    const {LoginWithGoogle,createUser}=useContext(AuthContext)
+    const {LoginWithGoogle,createUser,updateUser}=useContext(AuthContext)
     const navigate = useNavigate()
 
 
@@ -52,7 +52,16 @@ const SingUp = () => {
         createUser(email, password)
           .then((result) => {
             const user = result.user
-            toast.success("SingUp Successfully .....!")
+            
+            const userInfo = {
+                displayName: name
+            }
+            updateUser(userInfo)
+                    .then(() => { 
+                        toast.success("SingUp Successfully .....!")
+                    })
+                    .catch(err => console.log(err));
+            })
     
     //  const currentUser = {
     //           email: user.email,
@@ -69,7 +78,7 @@ const SingUp = () => {
             //     localStorage.setItem("soul-token", data.token);
             //     navigate("/");
             //   });
-          })
+        //   })
     
           .catch((e) => toast.error(e.message));
       };
@@ -100,7 +109,7 @@ const SingUp = () => {
     
             <div className="mt-6">
                 <button className="w-full px-4 py-2 tracking-wide text-white transition-colors duration-300 transform bg-gray-700 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-gray-600">
-                    Login
+                    SingUp
                 </button>
             </div>
         </form>
