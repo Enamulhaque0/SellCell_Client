@@ -1,6 +1,6 @@
 import React from 'react';
 import CategoryDetails from './CategoryDetails';
-import Modal from './Modal';
+
 
 const Category = () => {
     return (

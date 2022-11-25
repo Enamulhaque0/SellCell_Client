@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider } from "firebase/auth";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import toast from "react-hot-toast";
+import { saveUser } from "../../../hooks/saveUser";
 
 const SingUp = () => {
   const googleProvider = new GoogleAuthProvider();
@@ -16,6 +17,14 @@ const SingUp = () => {
     LoginWithGoogle(googleProvider)
       .then((result) => {
         const user = result.user;
+        
+        const userBody={
+
+          name:user?.displayName,
+          email:user?.email,
+          role:"buyer"
+        }
+        saveUser(userBody)
         toast.success("SingUp Successfully .....!");
         navigate("/");
         // const currentUser = {
@@ -44,10 +53,17 @@ const SingUp = () => {
 
     const email = form.email.value;
     const password = form.password.value;
+    const userBody={
+      name:name,
+      email:email,
+      role:`${toggle?"seller":"buyer"}`
+    }
+    console.log(userBody);
 
     createUser(email, password)
       .then((result) => {
         const user = result.user;
+        saveUser(userBody)
 
         const userInfo = {
           displayName: name,
@@ -78,6 +94,9 @@ const SingUp = () => {
 
       .catch((e) => toast.error(e.message));
   };
+
+
+
 
   return (
     <section className="my-32">

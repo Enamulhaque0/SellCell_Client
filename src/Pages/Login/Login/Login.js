@@ -3,6 +3,7 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider";
+import { saveUser } from "../../../hooks/saveUser";
 
 const Login = () => {
   const googleProvider = new GoogleAuthProvider();
@@ -18,7 +19,14 @@ const Login = () => {
       LoginWithGoogle(googleProvider)
         .then((result) => {
           const user = result.user;
-          toast.success("Login Successfully .....!")
+          const userBody={
+
+            name:user?.displayName,
+            email:user?.email,
+            role:"buyer"
+          }
+          saveUser(userBody)
+          toast.success("Login Successfully .....!");
           navigate("/");
           // const currentUser = {
           //   email: user.email,
