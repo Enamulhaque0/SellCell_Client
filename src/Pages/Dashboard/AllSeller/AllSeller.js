@@ -10,8 +10,8 @@ const AllSeller = () => {
                     <tr>
                         <th>1</th>
                         <th>Name</th>
-                        <th>Role</th>
                         <th>Email</th>
+                        <th>Verify</th>
                         <th>Action</th>
                     </tr>
                 </thead>
@@ -21,8 +21,8 @@ const AllSeller = () => {
                         <tr >
                             <th>1</th>
                             <td>Name</td>
-                            <td>Seller</td>
                             <td>Enamulhaq243@gmail.com</td>
+                            <td><button className="btn btn-xs">Verify</button></td>
                             <td><button className="btn btn-xs">Delete</button></td>
                         </tr>
                     

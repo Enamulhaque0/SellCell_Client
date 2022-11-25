@@ -37,7 +37,7 @@ const router = createBrowserRouter([
                 element: <SingUp></SingUp>
             },
             {
-                path: '/category-details',
+                path: '/category-details/:id',
                 element: <CategoryDetails></CategoryDetails>
             },
         ]

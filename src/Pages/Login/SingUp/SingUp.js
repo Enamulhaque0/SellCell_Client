@@ -9,7 +9,7 @@ const SingUp = () => {
   const googleProvider = new GoogleAuthProvider();
   const { LoginWithGoogle, createUser, updateUser } = useContext(AuthContext);
   const [toggle,setToggle]=useState(false)
-  console.log(toggle);
+  
   const navigate = useNavigate();
 
   // Google Login
@@ -58,7 +58,7 @@ const SingUp = () => {
       email:email,
       role:`${toggle?"seller":"buyer"}`
     }
-    console.log(userBody);
+    
 
     createUser(email, password)
       .then((result) => {

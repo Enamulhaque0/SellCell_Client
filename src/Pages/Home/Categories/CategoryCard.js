@@ -1,43 +1,20 @@
-import React from 'react';
-import apple from '../../../assets/image/apple.png'
-import sumsu from '../../../assets/image/samsung.png'
-import onePluse from '../../../assets/image/oneplus.png'
-import { Link } from 'react-router-dom';
-const CategoryCard = () => {
-    return (
-        <>
-        
-        <Link to="../category-details">
-        
-        <div className="card w-96  shadow-xl image-full">
-  <figure><img  src={apple} alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">Apple</h2>
-    
-  </div>
-</div>
-        
-        </Link>
-<div className="card w-96 bg-base-100 shadow-xl image-full">
-  <figure><img src={sumsu} alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">sumsu</h2>
-    
-  </div>
-</div>
-<div className="card w-96 bg-base-100 shadow-xl image-full">
-  <figure><img src={onePluse} alt="Shoes" /></figure>
-  <div className="card-body">
-    <h2 className="card-title">onePluse</h2>
-    
-  </div>
-</div>
-        
-        
-        
-        </>
+import React from "react";
 
-    );
+import { Link } from "react-router-dom";
+const CategoryCard = ({ brand }) => {
+  const { img, _id} = brand;
+  return (
+    <>
+      <Link to={`../category-details/${_id}`}>
+        <div className="card w-96  shadow-xl image-full">
+          <figure>
+            <img src={img} alt="Shoes" />
+          </figure>
+          <div className="card-body"></div>
+        </div>
+      </Link>
+    </>
+  );
 };
 
 export default CategoryCard;
