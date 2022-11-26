@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 import toast from "react-hot-toast";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Contexts/AuthProvider";
-import { saveUser } from "../../../hooks/saveUser";
+import { saveUser } from "../../../Api/saveUser";
 
 const Login = () => {
   const googleProvider = new GoogleAuthProvider();

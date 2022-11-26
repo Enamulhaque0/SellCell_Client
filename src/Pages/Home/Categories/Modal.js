@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider';
-import { bookingForm } from '../../../hooks/bookingForm';
+import { bookingForm } from '../../../Api/bookingForm';
 
 
 const Modal = ({book,setBook}) => {
@@ -27,29 +27,7 @@ const Modal = ({book,setBook}) => {
         
         bookingForm(booking,setBook)
 
-        // TODO: send data to the server
-        // and once data is saved then close the modal 
-        // and display success toast
-        // fetch('https://doctors-portal-server-rust.vercel.app/bookings', {
-        //     method: 'POST',
-        //     headers: {
-        //         'content-type': 'application/json'
-        //     },
-        //     body: JSON.stringify(booking)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         console.log(data);
-        //         if (data.acknowledged) {
-        //             setTreatment(null);
-        //             toast.success('Booking confirmed');
-        //             refetch();
-        //         }
-        //         else{
-        //             toast.error(data.message);
-        //         }
-        //     })
-
+       
 
     }
     return (

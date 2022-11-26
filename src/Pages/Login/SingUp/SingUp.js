@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { GoogleAuthProvider } from "firebase/auth";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import toast from "react-hot-toast";
-import { saveUser } from "../../../hooks/saveUser";
+import { saveUser } from "../../../Api/saveUser";
 
 const SingUp = () => {
   const googleProvider = new GoogleAuthProvider();

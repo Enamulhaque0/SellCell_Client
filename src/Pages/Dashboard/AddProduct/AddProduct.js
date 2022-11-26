@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
-import {saveProduct} from "../../../hooks/saveProduct";
+import {saveProduct} from "../../../Api/saveProduct";
 const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
