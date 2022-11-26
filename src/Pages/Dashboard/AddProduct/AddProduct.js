@@ -1,14 +1,18 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useQuery } from '@tanstack/react-query';
 import {saveProduct} from "../../../Api/saveProduct";
+import { AuthContext } from '../../../Contexts/AuthProvider';
+import Loader from '../../../Loader/Loader';
 const AddProduct = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
+    const {user}=useContext(AuthContext)
+    
 
 
 
 
-    const { data: Brands=[] } = useQuery({
+    const { data: Brands=[], isLoading } = useQuery({
         queryKey: ['brand'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/category');
@@ -18,7 +22,9 @@ const AddProduct = () => {
     })
 
 
-
+    if(isLoading){
+        return <Loader></Loader>
+    }
 
 
     const addProduct = data => {
@@ -49,6 +55,8 @@ const AddProduct = () => {
                     conditionType: data.conditionType,
                     categoryId:data.category,
                     image:imageData.data.url,
+                    status:"available",
+                    email:`${user?.email}`
                     
                 };
                 
