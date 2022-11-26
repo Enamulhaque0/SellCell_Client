@@ -3,7 +3,9 @@ import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import { saveProduct } from "../../../Api/saveProduct";
 import { AuthContext } from "../../../Contexts/AuthProvider";
+import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
+  const navigate = useNavigate()
   const {
     register,
     handleSubmit,
@@ -51,7 +53,7 @@ const AddProduct = () => {
             email: `${user?.email}`,
           };
 
-          saveProduct(product);
+          saveProduct(product,navigate);
         }
       });
   };

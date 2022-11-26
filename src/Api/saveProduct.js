@@ -1,7 +1,8 @@
 import toast from "react-hot-toast"
 
-export const saveProduct = (product) =>{
-    
+
+export const saveProduct = (product,navigate) =>{
+   
     fetch('http://localhost:5000/product', {
         method: 'POST',
         headers: {
@@ -13,6 +14,7 @@ export const saveProduct = (product) =>{
     .then(data =>{
         if(data.acknowledged){
         toast.success("product add successfully")
+        navigate("/dashboard/myproducts")
         }
         
     })
