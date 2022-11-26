@@ -5,7 +5,7 @@ import CategoryDetails from "./CategoryDetails";
 const Category = () => {
 
    const products = useLoaderData()
-   console.log(products);
+   
     
   return (
     <>

@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "./Modal";
 
 const CategoryDetails = ({ product }) => {
+  const [book,setBook]=useState()
   const {
     title,
     sellerName,
@@ -99,11 +100,13 @@ const CategoryDetails = ({ product }) => {
         </h4>
       </div>
       <div className="flex justify-center items-center">
-        <label htmlFor="booking-modal" className="btn btn-wide w-full">
+        <label onClick={()=> setBook(product)} htmlFor="booking-modal" className="btn btn-wide w-full">
           Book now
         </label>
       </div>
-      <Modal></Modal>
+     {
+      book &&  <Modal book={book} setBook={setBook}></Modal>
+     }
     </div>
   );
 };
