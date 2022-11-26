@@ -1,16 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import { AuthContext } from "../../../Contexts/AuthProvider";
-import Loader from "../../../Loader/Loader";
 import MyOrderRow from "./MyOrderRow";
 
 const MyOrders = () => {
   const { user } = useContext(AuthContext);
-  const {
-    data: orders = [],
-    isLoading,
-    refetch,
-  } = useQuery({
+  const { data: orders = [] } = useQuery({
     queryKey: ["email"],
     queryFn: async () => {
       const res = await fetch(
@@ -20,10 +15,6 @@ const MyOrders = () => {
       return data;
     },
   });
-  if (isLoading) {
-    refetch();
-    return <Loader></Loader>;
-  }
 
   return (
     <>
