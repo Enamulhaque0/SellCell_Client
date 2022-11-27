@@ -8,7 +8,7 @@ const NotFound = () => {
              <section className="flex items-center h-screen p-16  text-gray-900">
         <div className="container flex flex-col items-center justify-center px-5 mx-auto my-8">
 
-        <img className='w-96' src={error} alt="" srcset="" />
+        <img className='w-96' src={error} alt="" srcSet="" />
           
           <div className="max-w-md text-center">
 

@@ -4,7 +4,7 @@ import Logo from "../../../assets/Logo/Logo.webp";
 const Brand = () => {
   return (
     <section className="bg-green-100 py-20 lg:py-[120px] mt-12">
-      <img className="w-64 mx-auto" src={Logo} alt="" srcset="" />
+      <img className="w-64 mx-auto" src={Logo} alt="" srcSet="" />
       <h1 className="text-3xl my-8 text-center font-bold italic">
         compares prices from{" "}
         <span className="text-orange-600">40+ leading BuyBack</span> <br />{" "}
