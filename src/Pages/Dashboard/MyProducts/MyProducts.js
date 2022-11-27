@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React, { useContext } from "react";
 import toast from "react-hot-toast";
+import { addAdvertise } from "../../../Api/addAdvertise";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 
 const MyProducts = () => {
@@ -30,6 +31,13 @@ const MyProducts = () => {
     })
 }
 
+const handleAdvertise =product=>{
+  
+
+  addAdvertise(product)
+
+}
+
   return (
     <div>
       <h3 className="text-3xl mb-5">My Products</h3>
@@ -57,7 +65,7 @@ const MyProducts = () => {
                     <button onClick={()=>handleDeleteProduct(product)} className="btn btn-xs">Delete</button>
                   </td>
                   <td>
-                    <button className="btn btn-xs">advertise</button>
+                    <button onClick={()=>handleAdvertise(product)} className="btn btn-xs">advertise</button>
                   </td>
                 </tr>
               ))}

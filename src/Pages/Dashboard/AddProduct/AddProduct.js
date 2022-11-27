@@ -1,11 +1,11 @@
-import React, { useContext} from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import { saveProduct } from "../../../Api/saveProduct";
 import { AuthContext } from "../../../Contexts/AuthProvider";
 import { useNavigate } from "react-router-dom";
 const AddProduct = () => {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -24,12 +24,15 @@ const AddProduct = () => {
     },
   });
 
+  const current = new Date();
+
+  const time = current.toLocaleTimeString("en-US");
+
   const addProduct = (data) => {
     const image = data.image[0];
     const formData = new FormData();
     formData.append("image", image);
-    const url =
-      `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
+    const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
     fetch(url, {
       method: "POST",
       body: formData,
@@ -39,12 +42,12 @@ const AddProduct = () => {
         if (imageData) {
           const product = {
             title: data.title,
-            sellerName: data.sellerName,
+            sellerName: `${user?.displayName}`,
             originalPrice: data.originalPrice,
             resalePrice: data.resalePrice,
             phoneNumber: data.phoneNumber,
             location: data.location,
-            publishTime: data.publishTime,
+            publishTime: time,
             yearOfUse: data.yearOfUse,
             YearOfPurchase: data.YearOfPurchase,
             description: data.description,
@@ -55,7 +58,7 @@ const AddProduct = () => {
             email: `${user?.email}`,
           };
 
-          saveProduct(product,navigate);
+          saveProduct(product, navigate);
         }
       });
   };
@@ -87,9 +90,8 @@ const AddProduct = () => {
           </label>
           <input
             type="text"
-            {...register("sellerName", {
-              required: "sellerName is Required",
-            })}
+            value={user?.displayName}
+            disabled
             className="input input-bordered w-full max-w-xs"
           />
           {errors.sellerName && (
@@ -160,7 +162,7 @@ const AddProduct = () => {
             <p className="text-red-500">{errors.location.message}</p>
           )}
         </div>
-        <div className="form-control w-full max-w-xs">
+        {/* <div className="form-control w-full max-w-xs">
           <label className="label">
             {" "}
             <span className="label-text">Publish Time</span>
@@ -175,7 +177,7 @@ const AddProduct = () => {
           {errors.publishTime && (
             <p className="text-red-500">{errors.publishTime.message}</p>
           )}
-        </div>
+        </div> */}
         <div className="form-control w-full max-w-xs">
           <label className="label">
             {" "}
@@ -257,8 +259,6 @@ const AddProduct = () => {
               </option>
             ))}
 
-            {/* <option value="Audi">Audi</option>
-                        <option value="Lamborghini">Lamborghini</option> */}
             {errors.category && (
               <p className="text-red-500">{errors.category.message}</p>
             )}

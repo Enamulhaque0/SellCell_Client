@@ -13,7 +13,7 @@ export const saveProduct = (product,navigate) =>{
     .then(res => res.json())
     .then(data =>{
         if(data.acknowledged){
-        toast.success("product add successfully")
+        toast.success("product added successfully")
         navigate("/dashboard/myproducts")
         }
         

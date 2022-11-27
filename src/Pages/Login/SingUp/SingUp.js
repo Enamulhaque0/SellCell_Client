@@ -41,6 +41,7 @@ const SingUp = () => {
       name: name,
       email: email,
       role: `${toggle ? "seller" : "buyer"}`,
+      verified: false
     };
 
     // create user
