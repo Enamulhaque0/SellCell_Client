@@ -24,6 +24,7 @@ const MyOrders = () => {
           <table className="table w-full">
             <thead>
               <tr>
+              <th>Number</th>
                 <th>Image</th>
                 <th>title</th>
                 <th>Price</th>
@@ -32,8 +33,8 @@ const MyOrders = () => {
             </thead>
             <tbody>
               {orders &&
-                orders?.map((order) => (
-                  <MyOrderRow order={order} key={order._id}></MyOrderRow>
+                orders?.map((order,i) => (
+                  <MyOrderRow order={order} i={i} key={order._id}></MyOrderRow>
                 ))}
             </tbody>
           </table>

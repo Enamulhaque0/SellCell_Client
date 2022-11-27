@@ -35,8 +35,9 @@ const Modal = ({book,setBook}) => {
         <input type="checkbox" id="booking-modal" className="modal-toggle" />
         <div className="modal">
             <div className="modal-box relative">
-                <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                <h3 className="text-lg font-bold">{book.title}</h3>
+                <label onClick={()=> setBook(null)} htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                <h3 className="text-lg font-bold uppercase">{book.title}</h3>
+                <h2 className="text-lg font-bold badge badge-secondary badge-outline my-2">$ {book.resalePrice}</h2>
                 <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
                    
                     

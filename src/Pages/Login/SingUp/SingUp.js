@@ -8,8 +8,8 @@ import { saveUser } from "../../../Api/saveUser";
 const SingUp = () => {
   const googleProvider = new GoogleAuthProvider();
   const { LoginWithGoogle, createUser, updateUser } = useContext(AuthContext);
-  const [toggle,setToggle]=useState(false)
-  
+  const [toggle, setToggle] = useState(false);
+
   const navigate = useNavigate();
 
   // Google Login
@@ -17,31 +17,15 @@ const SingUp = () => {
     LoginWithGoogle(googleProvider)
       .then((result) => {
         const user = result.user;
-        
-        const userBody={
 
-          name:user?.displayName,
-          email:user?.email,
-          role:"buyer"
-        }
-        saveUser(userBody)
+        const userBody = {
+          name: user?.displayName,
+          email: user?.email,
+          role: "buyer",
+        };
+        saveUser(userBody);
         toast.success("SingUp Successfully .....!");
         navigate("/");
-        // const currentUser = {
-        //   email: user.email,
-        // }
-        // fetch("https://soul-good-man-server-enamulhaque0.vercel.app/jwt", {
-        //   method: "POST",
-        //   headers: {
-        //     "content-type": "application/json",
-        //   },
-        //   body: JSON.stringify(currentUser),
-        // })
-        //   .then((res) => res.json())
-        //   .then((data) => {
-        //     console.log(data);
-
-        //   });
       })
       .catch((error) => toast.error(error.message));
   };
@@ -53,17 +37,17 @@ const SingUp = () => {
 
     const email = form.email.value;
     const password = form.password.value;
-    const userBody={
-      name:name,
-      email:email,
-      role:`${toggle?"seller":"buyer"}`
-    }
-    
+    const userBody = {
+      name: name,
+      email: email,
+      role: `${toggle ? "seller" : "buyer"}`,
+    };
 
+    // create user
     createUser(email, password)
       .then((result) => {
         const user = result.user;
-        saveUser(userBody)
+        saveUser(userBody);
 
         const userInfo = {
           displayName: name,
@@ -71,32 +55,13 @@ const SingUp = () => {
         updateUser(userInfo)
           .then(() => {
             toast.success("SingUp Successfully .....!");
+            navigate("/");
           })
-          .catch((err) => console.log(err));
+          .catch((err) => toast.error(err));
       })
-
-      //  const currentUser = {
-      //           email: user.email,
-      //         };
-      //         fetch("https://soul-good-man-server-enamulhaque0.vercel.app/jwt", {
-      //           method: "POST",
-      //           headers: {
-      //             "content-type": "application/json",
-      //           },
-      //           body: JSON.stringify(currentUser),
-      //         })
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     localStorage.setItem("soul-token", data.token);
-      //     navigate("/");
-      //   });
-      //   })
 
       .catch((e) => toast.error(e.message));
   };
-
-
-
 
   return (
     <section className="my-32">
@@ -144,11 +109,8 @@ const SingUp = () => {
             <label className="cursor-pointer label">
               <span className="label-text">Are You Seller</span>
               <input
-              onClick={()=>setToggle(!toggle)}
-              
+                onClick={() => setToggle(!toggle)}
                 type="checkbox"
-                
-               
                 className="checkbox checkbox-accent"
               />
             </label>
@@ -164,12 +126,12 @@ const SingUp = () => {
         <div className="flex items-center justify-between mt-4">
           <span className="w-1/5 border-b dark:border-gray-600 lg:w-1/5"></span>
 
-          <a
-            href="#"
+          <button
+            
             className="text-xs text-center text-gray-500 uppercase dark:text-gray-400 hover:underline"
           >
             or login with Social Media
-          </a>
+          </button>
 
           <span className="w-1/5 border-b dark:border-gray-400 lg:w-1/5"></span>
         </div>

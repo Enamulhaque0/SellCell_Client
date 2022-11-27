@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext} from "react";
 import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import { saveProduct } from "../../../Api/saveProduct";
@@ -12,6 +12,8 @@ const AddProduct = () => {
     formState: { errors },
   } = useForm();
   const { user } = useContext(AuthContext);
+
+  const imageHostKey = process.env.REACT_APP_imgbb_key;
 
   const { data: Brands = [] } = useQuery({
     queryKey: ["brand"],
@@ -27,7 +29,7 @@ const AddProduct = () => {
     const formData = new FormData();
     formData.append("image", image);
     const url =
-      "https://api.imgbb.com/1/upload?key=e1afb4af4093a764143ea25ab00d00cd";
+      `https://api.imgbb.com/1/upload?key=${imageHostKey}`;
     fetch(url, {
       method: "POST",
       body: formData,

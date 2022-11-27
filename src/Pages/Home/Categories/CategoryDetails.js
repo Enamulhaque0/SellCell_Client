@@ -19,10 +19,10 @@ const CategoryDetails = ({ product }) => {
   } = product;
   return (
     <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-32">
-      <img  src={image} alt="avatar" />
+      <img className=""  src={image} alt="avatar" />
 
       <div className="flex items-center px-6 py-3 bg-gray-900">
-        <h1 className="mx-3 text-lg font-semibold text-white">{title}</h1>
+        <h1 className="mx-3 text-lg font-semibold text-white dark:text-white">{title}</h1>
       </div>
 
       <div className="px-6 py-4">
@@ -31,19 +31,19 @@ const CategoryDetails = ({ product }) => {
             ResalePrice $: {resalePrice}
           </p>
 
-          <p className="py-2 text-gray-700 dark:text-gray-400">
+          <p className="py-2 text-gray-700 dark:text-white">
             Original Price : $ {originalPrice}
           </p>
         </div>
-        <p>
-          {" "}
-          <span className="font-bold">Description</span> :{" "}
+        <p className="dark:text-white">
+          
+          <span className="font-bold dark:text-white">Description</span> :
           {description?.slice(0, 60)}
         </p>
 
-        <div className="flex justify-between items-center mt-2">
-          <p className="font-bold text-sm">Used : {yearOfUse} year</p>
-          <p className="font-bold text-sm">Purchase Date: {YearOfPurchase}</p>
+        <div className="flex justify-between items-center mt-2 ">
+          <p className="font-bold text-sm dark:text-white">Used : {yearOfUse} year</p>
+          <p className="font-bold text-sm dark:text-white dark:text-white">Purchase Date: {YearOfPurchase}</p>
         </div>
 
         <div className="flex items-center mt-4 text-gray-700 dark:text-gray-200">
@@ -95,7 +95,7 @@ const CategoryDetails = ({ product }) => {
           <h className="font-semibold text-sm">Phone : {phoneNumber}</h>
         </div>
 
-        <h4 className="text-center pt-5 font-bold">
+        <h4 className=" pt-5  dark:text-white text-sm font-semibold">
           PublishTime : {publishTime}
         </h4>
       </div>

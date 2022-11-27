@@ -1,11 +1,11 @@
 import React from 'react';
 
-const MyOrderRow = ({order}) => {
+const MyOrderRow = ({order,i}) => {
   const {productName,productInfo}=order
   const {image,resalePrice}=productInfo
     return (
         <tr>
-      
+      <td>{i+1}</td>
       <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
