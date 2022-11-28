@@ -10,7 +10,7 @@ const Home = () => {
   const [advertise, setAdvertise] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:5000/advertise").then((response) => {
+    axios.get("https://sell-cell-server.vercel.app/advertise").then((response) => {
       const data = response.data;
 
       setAdvertise(data);

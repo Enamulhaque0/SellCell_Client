@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 
 export const addAdvertise = (product) => {
-  fetch("http://localhost:5000/advertise", {
+  fetch("https://sell-cell-server.vercel.app/advertise", {
     method: "POST",
     headers: {
       "content-type": "application/json",

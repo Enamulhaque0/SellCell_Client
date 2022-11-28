@@ -1,7 +1,7 @@
 import toast from "react-hot-toast";
 
 export const bookingForm = (booking, setBook) => {
-  fetch("http://localhost:5000/booking", {
+  fetch("https://sell-cell-server.vercel.app/booking", {
     method: "POST",
     headers: {
       "content-type": "application/json",

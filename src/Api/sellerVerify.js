@@ -2,7 +2,7 @@ import toast from "react-hot-toast"
 
 export const sellerVerify = (id,refetch) =>{
     
-    fetch(`http://localhost:5000/seller/verify/${id}`, {
+    fetch(`https://sell-cell-server.vercel.app/seller/verify/${id}`, {
         method: 'PUT',
        
     })

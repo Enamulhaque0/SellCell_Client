@@ -10,7 +10,7 @@ const MyProducts = () => {
     queryKey: [user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/products?email=${user?.email}`
+        `https://sell-cell-server.vercel.app/products?email=${user?.email}`
       );
       const data = await res.json();
       return data;
@@ -18,7 +18,7 @@ const MyProducts = () => {
   });
 
   const handleDeleteProduct = product => {
-    fetch(`http://localhost:5000/product/${product._id}`, {
+    fetch(`https://sell-cell-server.vercel.app/product/${product._id}`, {
         method: 'DELETE', 
        
     })

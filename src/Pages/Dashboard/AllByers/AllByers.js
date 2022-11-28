@@ -6,14 +6,14 @@ const AllByers = () => {
   const { data: buyers = [],refetch } = useQuery({
     queryKey: ["buyer"],
     queryFn: async () => {
-      const res = await fetch("http://localhost:5000/buyers?buyer=buyer");
+      const res = await fetch("https://sell-cell-server.vercel.app/buyers?buyer=buyer");
       const data = await res.json();
       return data;
     },
   });
 
   const handleDeleteBuyer = buyer => {
-    fetch(`http://localhost:5000/buyer/${buyer._id}`, {
+    fetch(`https://sell-cell-server.vercel.app/buyer/${buyer._id}`, {
         method: 'DELETE', 
        
     })

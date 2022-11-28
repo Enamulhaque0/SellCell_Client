@@ -42,9 +42,9 @@ const router = createBrowserRouter([
       {
         path: "/category/:id",
 
-        element: <Category></Category>,
+        element: <PrivateRoute><Category></Category></PrivateRoute>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/category/${params.id}`),
+          fetch(`https://sell-cell-server.vercel.app/category/${params.id}`),
       },
     ],
   },
