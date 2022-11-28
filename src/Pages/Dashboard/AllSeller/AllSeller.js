@@ -1,6 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import React from "react";
 import toast from "react-hot-toast";
+import { sellerVerify } from "../../../Api/sellerVerify";
 
 const AllSeller = () => {
   const { data: sellers = [] ,refetch} = useQuery({
@@ -25,6 +26,14 @@ const AllSeller = () => {
         }
     })
 }
+
+const handleVerify = id =>{
+  sellerVerify(id,refetch)
+
+ 
+
+
+}
   return (
     <div>
       <h3 className="text-3xl mb-5">All Seller</h3>
@@ -47,7 +56,9 @@ const AllSeller = () => {
                   <td>{seller.name}</td>
                   <td>{seller.email}</td>
                   <td>
-                    <button className="btn btn-xs">Verify</button>
+                   {
+                    !seller.verified &&  <button onClick={()=>handleVerify(seller._id)} className="btn btn-xs">Verify</button>
+                   }
                   </td>
                   <td>
                     <button onClick={()=>handleDeleteSeller(seller)} className="btn btn-xs">Delete</button>

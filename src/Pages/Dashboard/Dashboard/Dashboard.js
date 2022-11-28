@@ -1,9 +1,10 @@
 import React from 'react';
+import Profile from './Profile';
 
 const Dashboard = () => {
     return (
         <div>
-            <h1>Dashboard Conditon render by user Role</h1>
+           <Profile></Profile>
         </div>
     );
 };

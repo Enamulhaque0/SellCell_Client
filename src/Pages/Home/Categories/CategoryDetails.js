@@ -18,8 +18,10 @@ const CategoryDetails = ({ product }) => {
     yearOfUse,
   } = product;
   return (
-    <div className="w-full max-w-sm overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 my-32">
-      <img className=""  src={image} alt="avatar" />
+    <div className="w-full overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800">
+     <figure className="w-36 mx-auto">
+     <img src={image} alt="avatar" />
+     </figure>
 
       <div className="flex items-center px-6 py-3 bg-gray-900">
         <h1 className="mx-3 text-lg font-semibold text-white dark:text-white">{title}</h1>

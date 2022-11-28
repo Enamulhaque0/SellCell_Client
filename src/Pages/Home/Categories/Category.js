@@ -7,7 +7,7 @@ const Category = () => {
 
   return (
     <>
-      <section>
+      <section className="m-8 mt-32">
 
         
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">

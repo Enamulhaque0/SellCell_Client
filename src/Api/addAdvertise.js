@@ -11,7 +11,7 @@ export const addAdvertise = (product) => {
     .then((res) => res.json())
     .then((data) => {
       if (data.acknowledged) {
-       return toast.success("product added successfully for Advertisement...!");
+       return toast.success(`${product.title} added successfully on advertisement section...!`);
       }
       if(!data.error){
        return toast.error(data.message);
