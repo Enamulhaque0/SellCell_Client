@@ -22,3 +22,7 @@
   -you wanna explore more about this website please visit on website.
 
 Live Link: https://sell-cell-7d7b6.web.app/
+
+Admin Credential
+Email : admin@admin.com
+Pass : admin123
